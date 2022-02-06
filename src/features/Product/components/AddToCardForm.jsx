@@ -36,7 +36,13 @@ function AddToCartForm({ onSubmit = null }) {
     <form onSubmit={form.handleSubmit(handleSubmit)}>
       <QuantityField name="quantity" label="Quantity" form={form} />
 
-      <Button type="submit" variant="contained" color="primary" style={{ width: '250px' }} size="large">
+      <Button
+        type="submit"
+        variant="contained"
+        color="primary"
+        sx={{ width: '250px', display: 'flex', justifyContent: ' center' }}
+        size="large"
+      >
         Add to cart
       </Button>
     </form>

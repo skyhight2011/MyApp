@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './app/store';
 import { SnackbarProvider } from 'notistack';
+import SpeedDialBox from './components/SpeedDial';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,6 +14,7 @@ ReactDOM.render(
       <BrowserRouter>
         <SnackbarProvider maxSnack={3}>
           <App />
+          <SpeedDialBox />
         </SnackbarProvider>
       </BrowserRouter>
     </Provider>

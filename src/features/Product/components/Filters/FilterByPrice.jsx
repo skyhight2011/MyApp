@@ -7,7 +7,6 @@ FilterByPrice.propTypes = {
 };
 
 function FilterByPrice({ onChange }) {
-  
   const [values, setValues] = useState({
     salePrice_gte: 0,
     salePrice_lte: 0,
@@ -32,11 +31,17 @@ function FilterByPrice({ onChange }) {
   };
 
   return (
-    <Paper elevation={1} sx={{ my: '5px', mx: '15px' }}>
-      <Typography sx={{ p: 1 }} variant="subtitle1">
+    <Paper elevation={0} sx={{ my: '3px', mx: '10px' }}>
+      <Typography sx={{ my: 1, fontWeight: '450' }} variant="subtitle1">
         Range Value
       </Typography>
-      <Box sx={{ display: 'flex', flexFlow: ' row nowrap', alignItems: 'center' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexFlow: ' row nowrap',
+          alignItems: 'center',
+        }}
+      >
         <TextField
           size="small"
           inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
@@ -44,7 +49,7 @@ function FilterByPrice({ onChange }) {
           value={values.salePrice_gte}
           onChange={handleChange}
         />
-        <Typography component="span" sx={{ fontSize: '30px', mx: '10px' }}>
+        <Typography component="span" sx={{ fontSize: '14px', mx: '8px', display: { xs: { visibility: 'hidden' } } }}>
           -
         </Typography>
         <TextField

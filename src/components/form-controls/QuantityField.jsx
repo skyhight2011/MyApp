@@ -22,13 +22,19 @@ function QuantityField(props) {
 
   return (
     <FormControl error={hasError} fullWidth margin="normal" variant="outlined" size="small">
-      <Typography>{label}</Typography>
-
       <Controller
         name={name}
         control={form.control}
         render={({ field: { onChange, onBlur, value, name } }) => (
-          <Box sx={{ display: 'flex', flexFlow: 'row nowrap', alignItems: 'center', maxWidth: '200px' }}>
+          <Box
+            sx={{
+              display: 'flex',
+              flexFlow: 'row nowrap',
+              alignItems: 'center',
+              maxWidth: '200px',
+              justifyItems: 'center',
+            }}
+          >
             <IconButton onClick={() => setValue(name, Number.parseInt(value) ? Number.parseInt(value) - 1 : 1)}>
               <RemoveCircleOutline />
             </IconButton>
@@ -40,6 +46,7 @@ function QuantityField(props) {
               value={value}
               onChange={onChange}
               onBlur={onBlur}
+              sx={{ display: 'inline-flex', justifyItems: 'center' }}
             />
             <IconButton onClick={() => setValue(name, Number.parseInt(value) ? Number.parseInt(value) + 1 : 1)}>
               <AddCircleOutline />
